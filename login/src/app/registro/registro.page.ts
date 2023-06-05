@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -11,8 +12,14 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class RegistroPage implements OnInit {
-
-  constructor() { }
+  nombre: string = "";
+  email: string = "";
+  password: string = "";
+  
+  constructor(private router: Router) { }
+  registro(){
+    this.router.navigateByUrl('/home');
+  }
 
   ngOnInit() {
   }
